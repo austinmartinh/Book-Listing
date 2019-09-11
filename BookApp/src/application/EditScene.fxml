@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.EditSceneController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="30.0" prefWidth="600.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Please enter the new book details below" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <GridPane hgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Book Title" />
+                  <Label text="Book Author" GridPane.rowIndex="1" />
+                  <Label text="Book Cover Url" GridPane.rowIndex="7" />
+                  <Label text="Year of publication" GridPane.rowIndex="2" />
+                  <Label text="Publisher" GridPane.rowIndex="3" />
+                  <Label text="Number of Pages" GridPane.rowIndex="4" />
+                  <Label text="Genre" GridPane.rowIndex="5" />
+                  <Label text="Plot Description" GridPane.rowIndex="6" />
+                  <TextField fx:id="titleTextField" promptText="Boo" GridPane.columnIndex="1" />
+                  <TextField fx:id="authorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="yearOfPublicationTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="publisherTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="numberOfPagesTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="genreTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="imageCoverlinkTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextArea fx:id="plotDecriptionTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </GridPane>
+            <HBox prefHeight="63.0" prefWidth="600.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updateEditedBook" text="Update" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets bottom="50.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#changeSceneToAddBookScene" text="Back to Books">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BookAddController">
+   <children>
+      <Label alignment="CENTER" prefHeight="37.0" prefWidth="825.0" text="Book Adding Facility" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </Label>
+      <HBox layoutX="6.0" layoutY="27.0" prefHeight="115.0" prefWidth="856.0" spacing="200.0">
+         <children>
+            <GridPane hgap="5.0" prefHeight="100.0" prefWidth="292.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Book Title" />
+                  <Label text="Book Author" GridPane.rowIndex="1" />
+                  <Label text="Publisher" GridPane.rowIndex="2" />
+                  <TextField fx:id="titleTextField" GridPane.columnIndex="1" />
+                  <TextField fx:id="authorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="publisherTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Plot description" GridPane.rowIndex="3" />
+                  <TextArea fx:id="plotDecriptionTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <GridPane prefHeight="115.0" prefWidth="308.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Number of Pages" />
+                  <Label text="Year Published" GridPane.rowIndex="1" />
+                  <Label text="Book Cover " GridPane.rowIndex="2" />
+                  <Label text="Genre" GridPane.rowIndex="3" />
+                  <TextField fx:id="numberOfPagesTextField" GridPane.columnIndex="1" />
+                  <TextField fx:id="yearOfPublicationTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="imageCoverlinkTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ChoiceBox fx:id="choicebox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+      <HBox layoutY="185.0" prefHeight="33.0" prefWidth="600.0" />
+      <HBox alignment="CENTER" layoutX="7.0" layoutY="170.0" prefHeight="37.0" prefWidth="851.0" spacing="20.0">
+         <children>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveBookButtonClicked" prefHeight="25.0" prefWidth="120.0" text="Add" />
+            <Button mnemonicParsing="false" onAction="#changeSceneToEditScene" prefHeight="25.0" prefWidth="120.0" text="Edit" />
+            <Button mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="25.0" prefWidth="120.0" text="Delete" />
+            <Button layoutX="114.0" layoutY="10.0" lineSpacing="20.0" mnemonicParsing="false" onAction="#changeSceneToMainScene" prefHeight="25.0" prefWidth="120.0" text="Cancel" />
+            <Button mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="120.0" text="Save All" />
+            <Button mnemonicParsing="false" onAction="#load" prefHeight="25.0" prefWidth="120.0" text="Load All" />
+         </children>
+      </HBox>
+      <HBox layoutX="7.0" layoutY="218.0" prefHeight="245.0" prefWidth="856.0">
+         <children>
+            <TableView fx:id="tableView" maxHeight="-Infinity" minHeight="-Infinity" onMouseClicked="#selectBookFromList" prefHeight="263.0" prefWidth="851.0">
+              <columns>
+                <TableColumn fx:id="titleColumn" prefWidth="75.0" text="Book Title" />
+                <TableColumn fx:id="authorColumn" prefWidth="75.0" text="Author" />
+                  <TableColumn fx:id="publisherColumn" prefWidth="75.0" text="Publisher" />
+                  <TableColumn fx:id="numberOfPagesColumn" prefWidth="75.0" text="Number of Pages" />
+                  <TableColumn fx:id="yearOfPublicationColumn" prefWidth="75.0" text="Year Published" />
+                  <TableColumn fx:id="genreColumn" prefWidth="75.0" text="Genre" />
+                  <TableColumn fx:id="plotDescriptionColumn" prefWidth="75.0" text="Plot Description" />
+                  <TableColumn fx:id="bookCoverColumn" prefWidth="75.0" text="Image Cover" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </HBox>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="660.0" layoutY="564.0" mnemonicParsing="false" onAction="#changeSceneToBookDetailsScene" text="Click Here for more Details" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="375.0" layoutY="504.0" mnemonicParsing="false" onAction="#sort" prefHeight="25.0" prefWidth="53.0" text="Sort" />
+      <ChoiceBox fx:id="sortChoices" layoutX="38.0" layoutY="504.0" prefWidth="150.0" />
+      <Label layoutX="38.0" layoutY="487.0" text="Sort by" />
+      <ChoiceBox fx:id="displayMode" layoutX="205.0" layoutY="504.0" prefWidth="150.0" />
+      <Label layoutX="207.0" layoutY="487.0" text="Display Mode" />
+      <ChoiceBox fx:id="searchModes" layoutX="205.0" layoutY="552.0" prefWidth="150.0" />
+      <Button layoutX="375.0" layoutY="552.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <Label layoutX="207.0" layoutY="535.0" text="Search Mode" />
+      <TextField fx:id="searchTextField" layoutX="39.0" layoutY="552.0" promptText="enter search term..." />
+      <Label layoutX="38.0" layoutY="535.0" text="Search Term" />
+      <Button layoutX="443.0" layoutY="552.0" mnemonicParsing="false" onAction="#clearSearch" text="Clear Search" />
+   </children>
+</AnchorPane>

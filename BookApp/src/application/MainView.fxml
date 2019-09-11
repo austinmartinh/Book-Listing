@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainViewController">
+   <children>
+      <Label layoutX="165.0" layoutY="14.0" prefHeight="31.0" prefWidth="284.0" text="Welcome to the Book Database">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="55.0" prefHeight="137.0" prefWidth="579.0" spacing="20.0">
+         <children>
+            <TextField alignment="CENTER" prefHeight="31.0" prefWidth="329.0" promptText="Book and Character search engine">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" text="Search" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="8.0" layoutY="192.0" prefHeight="31.0" prefWidth="592.0" spacing="20.0">
+         <children>
+            <Button fx:id="addBookButton" mnemonicParsing="false" onAction="#changeSceneToAddBookScene" prefHeight="31.0" prefWidth="98.0" text="Add a Book" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
